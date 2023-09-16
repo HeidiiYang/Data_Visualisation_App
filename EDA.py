@@ -3,7 +3,7 @@ import pandas as pd
 
 df=read_csv ("Dubawa_label_data.csv")
 
-st.write("Hello")
+st.write(len(df))
 
 
 
