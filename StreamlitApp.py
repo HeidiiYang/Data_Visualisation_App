@@ -10,7 +10,7 @@ fig.update_xaxes(title='POS Tagging').update_yaxes(title='Frequency')
 fig.update_layout(xaxis={'categoryorder':'total descending'}, width=1400, height=500)
 fig.show()
 
-st.write(fig)
+st.write(df_pos_tag)
 st.write("Hello World")
 
 
