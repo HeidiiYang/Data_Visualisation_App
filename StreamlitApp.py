@@ -9,7 +9,6 @@ fig.update_layout(xaxis={'categoryorder':'total descending'}, width=1400, height
 fig.show()
 
 st.write(fig)
-st.write("Hello World")
 
 
 
