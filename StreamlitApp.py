@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 
 df_pos_tag=pd.read_csv("data/pos_tag.csv")
 
