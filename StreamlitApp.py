@@ -2,8 +2,8 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import pandas as pd
 import plotly.express as px
+import joblib
 
-from news_predict import predict
 
 # Initial page config
 st.set_page_config(
@@ -11,6 +11,10 @@ st.set_page_config(
      layout="wide",
 )
 
+def predict(data):
+    logreg=joblib.load('logreg_model.sav')
+    return logreg.predict(data)
+     
 #Set menu on the side 
 with st.sidebar:
     selected=option_menu("Fake News Detection", ["Project Description", "Exploratory Data Analysis", "Modelling", "News Detection Tool"], 
