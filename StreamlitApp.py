@@ -6,6 +6,7 @@ import plotly.express as px
 import joblib
 import nltk
 from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 import string
 from nltk.tokenize import word_tokenize
 
@@ -31,7 +32,11 @@ def text_processing(text):
      text=''.join(ch for ch in text if ch not in p)
      text=word_tokenize(text)
      text=[w for w in text if w.lower() not in stopwords.words('english')]
-     return text
+     #lemmatise
+     lemmatizer=WordNetLemmatizer()
+     s_lemmatised=[lemmatizer.lemmatize(word) for word in text]
+     lemmatised_text=' '.join(s_lemmatised)
+     return lemmatised_text
      
 #Set menu on the side 
 with st.sidebar:
