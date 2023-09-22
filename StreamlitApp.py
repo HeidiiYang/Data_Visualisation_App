@@ -5,7 +5,7 @@ import regex as re
 import plotly.express as px
 import joblib
 import nltk
-import string
+from strings import string
 from nltk.tokenize import word_tokenize
 
 
