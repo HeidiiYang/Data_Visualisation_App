@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import pandas as pd
+import re
 import plotly.express as px
 import joblib
 
@@ -14,6 +15,10 @@ st.set_page_config(
 def predict(data):
     logreg=joblib.load('logreg_model.sav')
     return logreg.predict(data)
+
+def tex_processing(text):
+     text=re.sub(r'\d+', '', str(s))
+     return text
      
 #Set menu on the side 
 with st.sidebar:
