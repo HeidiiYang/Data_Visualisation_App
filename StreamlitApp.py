@@ -17,7 +17,7 @@ def predict(data):
     logreg=joblib.load('logreg_model.sav')
     return logreg.predict(data)
 
-def tex_processing(text):
+def text_processing(text):
      text=re.sub(r'\d+', '', str(text))
      return text
      
