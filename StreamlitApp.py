@@ -3,9 +3,8 @@ import pandas as pd
 import plotly.express as px
 
 #Visualise the news count by year
-df_count_by_year=pd.read_csv("data/full_dataset_calculation.csv")
-date_count=df_count_by_year['year'].value_counts()
-fig1=px.histogram(df_count_by_year, x='year', title='News Count by Year', color='Label', color_discrete_sequence=px.colors.qualitative.Vivid)
+df_news_calculation=pd.read_csv("data/full_dataset_calculation.csv")
+fig1=px.histogram(df_news_calculation, x='year', title='News Count by Year', color='Label', color_discrete_sequence=px.colors.qualitative.Vivid)
 fig1.update_xaxes(title='Publication Year').update_yaxes(title='News Count')
 fig1.update_layout(width=700, height=400, bargap=0.03)
 fig1.show()
