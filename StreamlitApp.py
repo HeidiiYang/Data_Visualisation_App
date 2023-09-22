@@ -3,7 +3,7 @@ from streamlit_option_menu import option_menu
 import pandas as pd
 import plotly.express as px
 
-from news_pred import predict
+from news_predict import predict
 
 # Initial page config
 st.set_page_config(
