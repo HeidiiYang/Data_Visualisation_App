@@ -4,6 +4,7 @@ import pandas as pd
 import re
 import plotly.express as px
 import joblib
+import nltk
 
 
 # Initial page config
@@ -78,8 +79,10 @@ elif selected=="News Detection Tool":
      st.header("News Detection: Fake or Real?")
      user_input=st.text_area("","Please pate news content here.")
      if st.button("predict"):
-          news_category=predict(np.array[[area, bedrooms]])
-          st.text(news_category[0])
+          t=text_processing(user_input)
+          st.write(t)
+          #news_category=predict(np.array[[area, bedrooms]])
+          #st.text(news_category[0])
      
 
 
