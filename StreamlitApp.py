@@ -32,7 +32,17 @@ fig.update_xaxes(title='POS Tagging').update_yaxes(title='Frequency')
 fig.update_layout(xaxis={'categoryorder':'total descending'}, width=1400, height=500)
 fig.show()
 
-st.write(fig1)
+if selected=='Project Description':
+     st.write("Fake news detection.")
+elif selected=='Exploratory Data Analysis':
+     st.write(fig1)
+elif seltected=='Modelling':
+     tab1, tab2=st.tabs(["Model Balancing", "Model Evaluation"])
+elif seltected=="News Detection Tool":
+     st.header("News Detection: Fake or Real?")
+     user_input=st.text_area("","Please pate news content here.")
+     
+
 
 
 
