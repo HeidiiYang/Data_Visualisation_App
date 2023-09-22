@@ -8,6 +8,9 @@ import nltk
 import string
 from nltk.tokenize import word_tokenize
 
+nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('wordnet')
 
 # Initial page config
 st.set_page_config(
