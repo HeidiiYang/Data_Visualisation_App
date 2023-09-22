@@ -29,9 +29,9 @@ def text_processing(text):
      #tokenise
      p=string.punctuation+'’”'
      text=''.join(ch for ch in text if ch not in p)
-     text_tokenised=word_tokenize(text)
-     tetxt_cleaned=[w for w in text_tokenised if w.lower() not in stopwords.words('english')]
-     return text_cleaned
+     text=word_tokenize(text)
+     text=[w for w in text if w.lower() not in stopwords.words('english')]
+     return text
      
 #Set menu on the side 
 with st.sidebar:
