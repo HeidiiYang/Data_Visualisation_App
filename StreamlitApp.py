@@ -37,8 +37,14 @@ fig2.show()
 #Visualise news lenght count
 fig3=px.histogram(df_news_calculation, x='content_length', title='News Text Length Count', barmode='overlay', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
 fig3.update_xaxes(title='Text length').update_yaxes(title='News Count')
-fig3.update_layout(width=700, height=500)
+fig3.update_layout(width=700, height=300)
 fig3.show()
+
+#Visualise average word length
+fig4=px.histogram(df_news_calculation, x='aver_word_length', title='Average Word Length Count', barmode='overlay', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
+fig.update_xaxes(title='Average Word length').update_yaxes(title='News Count')
+fig4.update_layout(width=700, height=300)
+fig4.show()
 
 df_pos_tag=pd.read_csv("data/pos_tag.csv")
 fig=px.histogram(df_pos_tag, x='pos_tag', y='frequency_ratio', title='POS Tagging Frequency in Fake and Real News', barmode='group', color='news_category', color_discrete_sequence=px.colors.qualitative.Vivid)
@@ -51,6 +57,7 @@ if selected=='Project Description':
 elif selected=='Exploratory Data Analysis':
      st.write(fig1)
      st.write(fig3)
+     st.write(fig4)
 elif selected=='Modelling':
      tab1, tab2=st.tabs(["Model Balancing", "Model Evaluation"])
      with tab1:
