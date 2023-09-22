@@ -40,8 +40,8 @@ def text_processing(text):
      #TF-IDF
      vectorizer=TfidfVectorizer(max_features=1943, stop_words='english')
      response=vectorizer.fit_transform(list(lemmatised_text))
-     text_tfidf=pd.DataFrame(response.toarray(),columns=vectorizer.get_feature_names_out())
-     return text_tfidf
+     #text_tfidf=pd.DataFrame(response.toarray(),columns=vectorizer.get_feature_names_out())
+     return response
      
 #Set menu on the side 
 with st.sidebar:
