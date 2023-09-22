@@ -12,7 +12,11 @@ st.set_page_config(
 #Set menu on the side 
 with st.sidebar:
     selected=option_menu("Fake News Detection", ["Project Description", "Exploratory Data Analysis", "Modelling", "News Detection Tool"], 
-                         menu_icon="newspaper", default_index=1)
+                         menu_icon="newspaper", 
+                         default_index=1, styles={
+                              "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+                              "nav-link-selected": {"background-color": "#952e4b"},
+                         })
     selected
 
 #Visualise the news count by year
