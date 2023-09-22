@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 
 #Reading the dataset
-df_news=pd.read_csv('data/news_sample.csv')
+df_news=pd.read_csv('data/nm_sample.csv')
 
 #Seperating the target and features
 #target->y, features->X
