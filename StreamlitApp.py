@@ -28,11 +28,17 @@ fig1.update_xaxes(title='Publication Year').update_yaxes(title='News Count')
 fig1.update_layout(width=700, height=400, bargap=0.03)
 fig1.show()
 
-#visualise fake and real news distribution
+#Visualise fake and real news distribution
 fig2=px.histogram(df_news_calculation, x='Label', title='Distribution of fake and factual news', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
 fig2.update_xaxes(type='category', title='News Label').update_yaxes(title='News Count')
-fig2.update_layout(width=1000, height=500, bargap=0.03)
+fig2.update_layout(width=700, height=400, bargap=0.03)
 fig2.show()
+
+#Visualise news lenght count
+fig3=px.histogram(df_news_calculation, x='content_length', title='News Text Length Count', barmode='overlay', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
+fig3.update_xaxes(title='Text length').update_yaxes(title='News Count')
+fig3.update_layout(width=700, height=500)
+fig3.show()
 
 df_pos_tag=pd.read_csv("data/pos_tag.csv")
 fig=px.histogram(df_pos_tag, x='pos_tag', y='frequency_ratio', title='POS Tagging Frequency in Fake and Real News', barmode='group', color='news_category', color_discrete_sequence=px.colors.qualitative.Vivid)
@@ -44,6 +50,7 @@ if selected=='Project Description':
      st.write("Fake news detection.")
 elif selected=='Exploratory Data Analysis':
      st.write(fig1)
+     st.write(fig3)
 elif selected=='Modelling':
      tab1, tab2=st.tabs(["Model Balancing", "Model Evaluation"])
      with tab1:
