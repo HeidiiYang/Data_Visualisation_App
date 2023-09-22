@@ -3,6 +3,8 @@ from streamlit_option_menu import option_menu
 import pandas as pd
 import plotly.express as px
 
+from news_pred import predict
+
 # Initial page config
 st.set_page_config(
      page_title='XXXPageTitle',
@@ -66,7 +68,9 @@ elif selected=='Modelling':
 elif selected=="News Detection Tool":
      st.header("News Detection: Fake or Real?")
      user_input=st.text_area("","Please pate news content here.")
-     st.button("predict")
+     '''if st.button("predict"):
+          news_category=predict(np.array[[area, bedrooms]])
+          st.text(news_category[0])'''
      
 
 
