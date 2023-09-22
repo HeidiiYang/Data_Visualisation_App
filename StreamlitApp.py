@@ -5,6 +5,8 @@ import regex as re
 import plotly.express as px
 import joblib
 import nltk
+import string
+from nltk.tokenize import word_tokenize
 
 
 # Initial page config
@@ -18,8 +20,14 @@ def predict(data):
     return logreg.predict(data)
 
 def text_processing(text):
+     #remove numbers/digits
      text=re.sub(r'\d+', '', str(text))
-     return text
+     #tokenise
+     p=string.punctuation+'’”'
+     text=''.join(ch for ch in text if ch not in p)
+     text_tokenised=word_tokenize(text)
+     tetxt_cleaned=[w for w in text_tokenised if w.lower() not in stopwords.words('english')]
+     return text_cleaned
      
 #Set menu on the side 
 with st.sidebar:
