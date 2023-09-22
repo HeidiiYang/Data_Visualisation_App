@@ -5,6 +5,7 @@ import regex as re
 import plotly.express as px
 import joblib
 import nltk
+from nltk.corpus import stopwords
 import string
 from nltk.tokenize import word_tokenize
 
