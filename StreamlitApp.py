@@ -2,6 +2,18 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# Initial page config
+st.set_page_config(
+     page_title='XXXPageTitle',
+     layout="wide",
+)
+
+#Set menu on the side 
+with st.sidebar:
+    selected=option_menu("Fake News Detection", ["Project Description", "Exploratory Data Analysis", "Modelling", "News Detection Tool"], 
+                         menu_icon="newspaper", default_index=1)
+    selected
+
 #Visualise the news count by year
 df_news_calculation=pd.read_csv("data/full_dataset_calculation.csv")
 fig1=px.histogram(df_news_calculation, x='year', title='News Count by Year', color='Label', color_discrete_sequence=["#84B9EF", "#FF7171"])
