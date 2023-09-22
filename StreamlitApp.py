@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import pandas as pd
-import re
+import regex as re
 import plotly.express as px
 import joblib
 import nltk
