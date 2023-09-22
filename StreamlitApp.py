@@ -23,7 +23,7 @@ with st.sidebar:
 df_news_calculation=pd.read_csv("data/full_dataset_calculation.csv")
 
 #Visualise the news count by year
-fig1=px.histogram(df_news_calculation, x='year', title='News Count by Year', color='Label', color_discrete_sequence=["#84B9EF", "#FF7171"])
+fig1=px.histogram(df_news_calculation, x='year', title='News Count by Year', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
 fig1.update_xaxes(title='Publication Year').update_yaxes(title='News Count')
 fig1.update_layout(width=700, height=400, bargap=0.03)
 fig1.show()
@@ -58,6 +58,7 @@ elif selected=='Exploratory Data Analysis':
      st.write(fig1)
      st.write(fig3)
      st.write(fig4)
+     st.write(fig5)
 elif selected=='Modelling':
      tab1, tab2=st.tabs(["Model Balancing", "Model Evaluation"])
      with tab1:
