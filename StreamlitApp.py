@@ -36,9 +36,9 @@ if selected=='Project Description':
      st.write("Fake news detection.")
 elif selected=='Exploratory Data Analysis':
      st.write(fig1)
-elif seltected=='Modelling':
+elif selected=='Modelling':
      tab1, tab2=st.tabs(["Model Balancing", "Model Evaluation"])
-elif seltected=="News Detection Tool":
+elif selected=="News Detection Tool":
      st.header("News Detection: Fake or Real?")
      user_input=st.text_area("","Please pate news content here.")
      
