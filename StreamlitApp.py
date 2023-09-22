@@ -9,6 +9,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import string
 from nltk.tokenize import word_tokenize
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -36,7 +37,11 @@ def text_processing(text):
      lemmatizer=WordNetLemmatizer()
      s_lemmatised=[lemmatizer.lemmatize(word) for word in text]
      lemmatised_text=' '.join(s_lemmatised)
-     return lemmatised_text
+     #TF-IDF
+     vectorizer=TfidfVectorizer(max_features=1943, stop_words='english')
+     response=vectorizer.fit_transform(list(lemmatised_text))
+     text_tfidf=pd.DataFrame(response.toarray(),columns=vectorizer.get_feature_names_out())
+     return text_tfidf
      
 #Set menu on the side 
 with st.sidebar:
@@ -94,7 +99,7 @@ elif selected=='Modelling':
           st.write(fig2)
 elif selected=="News Detection Tool":
      st.header("News Detection: Fake or Real?")
-     user_input=st.text_area("","Please pate news content here.")
+     user_input=st.text_area("","Please paste news content here.")
      if st.button("predict"):
           t=text_processing(user_input)
           st.write(t)
