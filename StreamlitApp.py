@@ -72,9 +72,9 @@ elif selected=='Modelling':
 elif selected=="News Detection Tool":
      st.header("News Detection: Fake or Real?")
      user_input=st.text_area("","Please pate news content here.")
-     '''if st.button("predict"):
+     if st.button("predict"):
           news_category=predict(np.array[[area, bedrooms]])
-          st.text(news_category[0])'''
+          st.text(news_category[0])
      
 
 
