@@ -19,12 +19,20 @@ with st.sidebar:
                          })
     selected
 
-#Visualise the news count by year
+#Reading the calculation dataset
 df_news_calculation=pd.read_csv("data/full_dataset_calculation.csv")
+
+#Visualise the news count by year
 fig1=px.histogram(df_news_calculation, x='year', title='News Count by Year', color='Label', color_discrete_sequence=["#84B9EF", "#FF7171"])
 fig1.update_xaxes(title='Publication Year').update_yaxes(title='News Count')
 fig1.update_layout(width=700, height=400, bargap=0.03)
 fig1.show()
+
+#visualise fake and real news distribution
+fig2=px.histogram(df_news_calculation, x='Label', title='Distribution of fake and factual news', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
+fig2.update_xaxes(type='category', title='News Label').update_yaxes(title='News Count')
+fig2.update_layout(width=1000, height=500, bargap=0.03)
+fig2.show()
 
 df_pos_tag=pd.read_csv("data/pos_tag.csv")
 fig=px.histogram(df_pos_tag, x='pos_tag', y='frequency_ratio', title='POS Tagging Frequency in Fake and Real News', barmode='group', color='news_category', color_discrete_sequence=px.colors.qualitative.Vivid)
@@ -38,6 +46,8 @@ elif selected=='Exploratory Data Analysis':
      st.write(fig1)
 elif selected=='Modelling':
      tab1, tab2=st.tabs(["Model Balancing", "Model Evaluation"])
+     with tab1:
+          st.write(fig2)
 elif selected=="News Detection Tool":
      st.header("News Detection: Fake or Real?")
      user_input=st.text_area("","Please pate news content here.")
