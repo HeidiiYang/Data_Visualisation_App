@@ -18,7 +18,7 @@ def predict(data):
     return logreg.predict(data)
 
 def tex_processing(text):
-     text=re.sub(r'\d+', '', str(s))
+     text=re.sub(r'\d+', '', str(text))
      return text
      
 #Set menu on the side 
