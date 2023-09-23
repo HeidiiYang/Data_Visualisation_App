@@ -48,7 +48,7 @@ def tf_idf(text):
      vectorizer=TfidfVectorizer(stop_words='english')
      response=vectorizer.fit_transform(list(text))
      text_tfidf=pd.DataFrame(response.toarray(),columns=vectorizer.get_feature_names_out())
-return text_tfidf
+     return text_tfidf
      
 #Set menu on the side 
 with st.sidebar:
