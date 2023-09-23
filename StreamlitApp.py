@@ -46,7 +46,7 @@ def text_processing(text):
 
 def tf_idf(text):
      vectorizer=TfidfVectorizer(stop_words='english')
-     response=vectorizer.fit_transform(list(text, ''))
+     response=vectorizer.fit_transform([text, ''])
      tfidf_matrix=pd.DataFrame(response.toarray(),columns=vectorizer.get_feature_names_out())
      text_tfidf=tfidf_matrix[0]
      return text_tfidf
