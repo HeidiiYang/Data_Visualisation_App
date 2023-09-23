@@ -47,7 +47,7 @@ def text_processing(text):
 def tf_idf(text):
      vectorizer=TfidfVectorizer(stop_words='english')
      response=vectorizer.fit_transform(list(text))
-     text_tfidf=pd.DataFrame(response.toarray(),columns=vectorizer.get_feature_names_out())
+     #text_tfidf=pd.DataFrame(response.toarray(),columns=vectorizer.get_feature_names_out())
      return text_tfidf
      
 #Set menu on the side 
@@ -109,6 +109,7 @@ elif selected=="News Detection Tool":
      user_input=st.text_area("","Please paste news content here.")
      if st.button("predict"):
           t=text_processing(user_input)
+          t=tf_idf(t)
           st.write(t)
           #news_category=predict(np.array[[area, bedrooms]])
           #st.text(news_category[0])
