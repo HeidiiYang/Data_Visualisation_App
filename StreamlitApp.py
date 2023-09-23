@@ -37,7 +37,7 @@ def text_processing(text):
      new_words=[]
      for word in text:
           word=word.lower()
-          new_words.apend(word)
+          new_words.append(word)
      #lemmatise
      lemmatizer=WordNetLemmatizer()
      s_lemmatised=[lemmatizer.lemmatize(word) for word in new_words]
