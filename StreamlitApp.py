@@ -42,11 +42,13 @@ def text_processing(text):
      lemmatizer=WordNetLemmatizer()
      s_lemmatised=[lemmatizer.lemmatize(word) for word in new_words]
      lemmatised_text=' '.join(s_lemmatised)
-     #TF-IDF
-     #vectorizer=TfidfVectorizer(max_features=1943, stop_words='english')
-     #response=vectorizer.fit_transform(list(lemmatised_text))
-     ##text_tfidf=pd.DataFrame(response.toarray(),columns=vectorizer.get_feature_names_out())
      return lemmatised_text
+
+def tf_idf(text):
+     vectorizer=TfidfVectorizer(stop_words='english')
+     response=vectorizer.fit_transform(list(text))
+     text_tfidf=pd.DataFrame(response.toarray(),columns=vectorizer.get_feature_names_out())
+return text_tfidf
      
 #Set menu on the side 
 with st.sidebar:
