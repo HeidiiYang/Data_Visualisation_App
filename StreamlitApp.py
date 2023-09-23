@@ -33,9 +33,14 @@ def text_processing(text):
      text=''.join(ch for ch in text if ch not in p)
      text=word_tokenize(text)
      text=[w for w in text if w.lower() not in stopwords.words('english')]
+     #converse to lower case
+     new_words=[]
+     for word in text:
+          word=word.lower()
+          new_words.apend(word)
      #lemmatise
      lemmatizer=WordNetLemmatizer()
-     s_lemmatised=[lemmatizer.lemmatize(word) for word in text]
+     s_lemmatised=[lemmatizer.lemmatize(word) for word in new_words]
      lemmatised_text=' '.join(s_lemmatised)
      #TF-IDF
      vectorizer=TfidfVectorizer(max_features=1943, stop_words='english')
