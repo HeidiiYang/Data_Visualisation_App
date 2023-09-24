@@ -8,8 +8,8 @@ df_news=pd.read_csv('data/smote_sample.csv')
 
 #Seperating the target and features
 #target->y, features->X
-y=data['Label']
-X=data.drop(columns='Label', axis=1)
+y=df_news['Label']
+X=df_news.drop(columns='Label', axis=1)
 
 #Splitting into training and test data set
 X_train, X_test, y_train, y_test=train_test_split(X, y, test_size=0.3, random_state=0)
