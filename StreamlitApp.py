@@ -95,7 +95,7 @@ fig5.update_layout(width=700, height=300)
 fig5.show()
 
 df_pos_tag=pd.read_csv("data/pos_tag.csv")
-fig6=px.histogram(df_pos_tag, x='pos_tag', y='frequency_ratio', title='POS Tagging Frequency in Fake and Real News', barmode='group', color='news_category', color_discrete_sequence=px.colors.qualitative.Vivid)
+fig6=px.histogram(df_pos_tag[df_pos_tag["frequency_ratio"]>1.3], x='pos_tag', y='frequency_ratio', title='POS Tagging Frequency in Fake and Real News', barmode='group', color='news_category', color_discrete_sequence=["#676FA3", "#FF5959"])
 fig6.update_xaxes(title='POS Tagging').update_yaxes(title='Frequency')
 fig6.update_layout(xaxis={'categoryorder':'total descending'}, width=1400, height=500)
 fig6.show()
