@@ -118,9 +118,9 @@ elif selected=="News Detection Tool":
      if st.button("predict"):
           t=text_processing(user_input)
           t=tf_idf(t)
-          st.write(t)
+          news_category=predict(np.arrary[[t]])
           #news_category=predict(np.array[[area, bedrooms]])
-          #st.text(news_category[0])
+          st.text(news_category[0])
      
 
 
