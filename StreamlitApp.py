@@ -62,7 +62,7 @@ with st.sidebar:
     selected
 
 #Reading the calculation dataset
-df_news_calculation=pd.read_csv("data/full_dataset_calculation.csv")
+df_news_calculation=pd.read_csv("data/dataset_calculation.csv")
 
 #Visualise the news count by year
 fig1=px.histogram(df_news_calculation, x='year', title='News Count by Year', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
@@ -76,23 +76,29 @@ fig2.update_xaxes(type='category', title='News Label').update_yaxes(title='News 
 fig2.update_layout(width=700, height=400, bargap=0.03)
 fig2.show()
 
-#Visualise news lenght count
+#Visualise content/character lenght count
 fig3=px.histogram(df_news_calculation, x='content_length', title='News Text Length Count', barmode='overlay', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
 fig3.update_xaxes(title='Text length').update_yaxes(title='News Count')
 fig3.update_layout(width=700, height=300)
 fig3.show()
 
-#Visualise average word length
-fig4=px.histogram(df_news_calculation, x='aver_word_length', title='Average Word Length Count', barmode='overlay', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
-fig4.update_xaxes(title='Average Word length').update_yaxes(title='News Count')
+#Visualise the number of weords
+fig4=px.histogram(df_news_calculation, x='word_count', title='The number of words', barmode='overlay', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
+fig4.update_xaxes(title='The number of words').update_yaxes(title='News Count')
 fig4.update_layout(width=700, height=300)
 fig4.show()
 
-df_pos_tag=pd.read_csv("data/pos_tag.csv")
-fig5=px.histogram(df_pos_tag, x='pos_tag', y='frequency_ratio', title='POS Tagging Frequency in Fake and Real News', barmode='group', color='news_category', color_discrete_sequence=px.colors.qualitative.Vivid)
-fig5.update_xaxes(title='POS Tagging').update_yaxes(title='Frequency')
-fig5.update_layout(xaxis={'categoryorder':'total descending'}, width=1400, height=500)
+#Visualise average word length 
+fig5=px.histogram(df_news_calculation, x='aver_word_length', title='Average Word Length Count', barmode='overlay', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
+fig5.update_xaxes(title='Average Word length').update_yaxes(title='News Count')
+fig5.update_layout(width=700, height=300)
 fig5.show()
+
+df_pos_tag=pd.read_csv("data/pos_tag.csv")
+fig6=px.histogram(df_pos_tag, x='pos_tag', y='frequency_ratio', title='POS Tagging Frequency in Fake and Real News', barmode='group', color='news_category', color_discrete_sequence=px.colors.qualitative.Vivid)
+fig6.update_xaxes(title='POS Tagging').update_yaxes(title='Frequency')
+fig6.update_layout(xaxis={'categoryorder':'total descending'}, width=1400, height=500)
+fig6.show()
 
 if selected=='Project Description':
      st.write("Fake news detection.")
@@ -101,6 +107,7 @@ elif selected=='Exploratory Data Analysis':
      st.write(fig3)
      st.write(fig4)
      st.write(fig5)
+     st.write(fig6)
 elif selected=='Modelling':
      tab1, tab2=st.tabs(["Model Balancing", "Model Evaluation"])
      with tab1:
