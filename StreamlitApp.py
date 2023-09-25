@@ -133,7 +133,7 @@ elif selected=="News Detection Tool":
           t=tf_idf(t)
           t=feature_matching(t)
           news_category=predict(t)
-          st.write(news_category)
+          st.text("The probability of being fake is {}".format(round(news_category[0], 2)))
           #news_category=predict(np.array[[area, bedrooms]])
           #st.text(t)
 
