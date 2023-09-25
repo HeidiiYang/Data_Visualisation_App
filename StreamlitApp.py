@@ -112,11 +112,19 @@ fig5.update_xaxes(title='Average Word length').update_yaxes(title='News Count')
 fig5.update_layout(width=700, height=300)
 fig5.show()
 
+#Visualise the pos tag count
 df_pos_tag=pd.read_csv("data/pos_tag.csv")
 fig6=px.histogram(df_pos_tag[df_pos_tag["frequency_ratio"]>1.3], x='pos_tag', y='frequency_ratio', title='Part-of-Speech Tagging Frequency in Fake and Real News', barmode='group', color='news_category', color_discrete_sequence=["#949CDF", "#EB455F"])
 fig6.update_xaxes(title='POS Tagging').update_yaxes(title='Frequency')
 fig6.update_layout(xaxis={'categoryorder':'total descending'}, width=700, height=400)
 fig6.show()
+
+#Visualise the top 20 proper nouns
+df_nnp=pd.read_csv("data/nnp_20.csv")
+fig7=px.histogram(df_nnp, x='frequency_ratio', y='NNP', title='Top 20 Proper Nouns', barmode='group', color='news_category', color_discrete_sequence=["#949CDF", "#EB455F"])
+#fig7.update_xaxes(title='POS Tagging').update_yaxes(title='Frequency')
+fig7.update_layout(xaxis={'categoryorder':'total descending'}, width=700, height=400)
+fig7.show()
 
 if selected=='Project Description':
      st.write("Fake news detection.")
@@ -129,6 +137,9 @@ elif selected=='Exploratory Data Analysis':
      st.write("Compared with real news, fake news tends to use simpler words to make their content longer.")
      st.write(fig6)
      st.write("In terms of the part-of-speech differences, fake news contains more nouns, verbs, past participle verbs, and adverbs. In contrast, real news uses more adjectives, proper nouns, gerund verbs and past tense verbs.")
+     st.write("The difference lying in the use of proper nouns between fake and real news is noticeable. To illustrate the contrast, the top 20 proper nouns in the two news groups were selected and visualised.")
+     st.write(fig7)
+     st.write("Apparently, terms associated with health (such as ) occurred more frequently in the fake news dataset than in the real news dataset, which lends support to the assumption of a large volume of fake news related to the covid-19 above. ")
 elif selected=='Modelling':
      with open("style.css") as source_style:
           st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
