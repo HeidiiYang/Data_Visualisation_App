@@ -126,6 +126,8 @@ elif selected=='Modelling':
      with tab1:
           st.write(fig2)
 elif selected=="News Detection Tool":
+     with open("style.css") as source_style:
+          st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
      st.header("News Detection: Fake or Real?")
      user_input=st.text_area("","Please paste news content here.")
      if st.button("predict"):
