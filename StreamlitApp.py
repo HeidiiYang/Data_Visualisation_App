@@ -69,8 +69,8 @@ with st.sidebar:
     selected=option_menu("Fake News Detection", ["Project Description", "Exploratory Data Analysis", "Modelling", "News Detection Tool"], 
                          menu_icon="newspaper", 
                          default_index=1, styles={
-                              "menue_title": {"font-size": "10px"},
-                              "icon": {"color": "#949cdf", "font-size": "26px"}, 
+                              "menue_icon": {"color": "#949cdf"},
+                              "icon": {"color": "#949cdf", "font-size": "18px"}, 
                               "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
                               "nav-link-selected": {"background-color": "#2b3467"},
                          })
