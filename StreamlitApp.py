@@ -62,15 +62,7 @@ def feature_matching(df_text_feature):
           if c in df_text_feature.columns:
                df_t_fit[c]=df_text_feature[c]
      df_t_fit=df_t_fit.fillna(0.0)
-     return df_t_fit
-def change_legend_name(fig):
-     newnames={'col1':'fake news', 'col2': 'real news'}
-     fig.for_each_trace(lambda t: t.update(name=newnames[t.name],
-                                      legendgroup=newnames[t.name],
-                                      hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])
-                                     )
-                  )
-     return fig
+     return df_t_fit     
 
 #Set menu on the side 
 with st.sidebar:
@@ -94,8 +86,6 @@ df_news_calculation=pd.read_csv("data/dataset_calculation.csv")
 fig1=px.histogram(df_news_calculation, x='year', title='News Count by Year', color='Label', color_discrete_sequence=["#949CDF", "#EB455F"])
 fig1.update_xaxes(title='Publication Year').update_yaxes(title='News Count')
 fig1.update_layout(width=700, height=400, bargap=0.03)
-newnames={'col1':'hello', 'col2': 'hi'}
-fig1=change_legend_name(fig1)
 fig1.show()
 
 #Visualise fake and real news distribution
