@@ -23,8 +23,9 @@ st.set_page_config(
 )
 
 def predict(data):
-    logreg=joblib.load('logreg_model.sav')
-    return logreg.predict(data)
+     logreg=joblib.load('logreg_model.sav')
+     proba_result=logreg.predict_proba(data)
+    return proba_result
 
 def text_processing(text):
      #remove numbers/digits
@@ -51,6 +52,15 @@ def tf_idf(text):
      tfidf_matrix=pd.DataFrame(response.toarray(),columns=vectorizer.get_feature_names_out())
      text_tfidf=tfidf_matrix.loc[0]
      return text_tfidf
+
+def feature_matching(df_text_feature):
+     lr_model=joblib.load('logreg_model.sav')
+     df_t_fit=pd.DataFrame(columns=lr_model.feature_names)
+     for c in df_t_fit.columns:
+          if c in df_t.columns:
+               df_t_fit[c]=df_text_feature[c]
+     df_t_fit=df_t_fit.fillna(0.0)
+     return df_t_fit
      
 #Set menu on the side 
 with st.sidebar:
