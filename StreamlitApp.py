@@ -122,10 +122,13 @@ if selected=='Project Description':
      st.write("Fake news detection.")
 elif selected=='Exploratory Data Analysis':
      st.write(fig1)
+     st.write("Fake news accumulates in 2020, suggesting the potential existence of a significant amount of misinformation concerning COVID-19.")
      st.write(fig3)
      st.write(fig4)
      st.write(fig5)
+     st.write("Compared with real news, fake news tends to use simpler words to make their content longer.")
      st.write(fig6)
+     st.write("In terms of the part-of-speech differences, fake news contains more nouns, verbs, past participle verbs, and adverbs. In contrast, real news uses more adjectives, proper nouns, gerund verbs and past tense verbs.")
 elif selected=='Modelling':
      with open("style.css") as source_style:
           st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
