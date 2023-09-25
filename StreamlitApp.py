@@ -70,7 +70,7 @@ with st.sidebar:
                          menu_icon="newspaper", 
                          default_index=1, styles={
                               "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-                              "nav-link-selected": {"background-color": "#cddeff"},
+                              "nav-link-selected": {"background-color": "#2b3467"},
                          })
     selected
 
