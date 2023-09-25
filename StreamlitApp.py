@@ -72,31 +72,31 @@ fig1.update_layout(width=700, height=400, bargap=0.03)
 fig1.show()
 
 #Visualise fake and real news distribution
-fig2=px.histogram(df_news_calculation, x='Label', title='Distribution of fake and factual news', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
+fig2=px.histogram(df_news_calculation, x='Label', title='Distribution of fake and factual news', color='Label', color_discrete_sequence=["#949CDF", "#EB455F"])
 fig2.update_xaxes(type='category', title='News Label').update_yaxes(title='News Count')
 fig2.update_layout(width=700, height=400, bargap=0.03)
 fig2.show()
 
 #Visualise content/character lenght count
-fig3=px.histogram(df_news_calculation, x='content_length', title='News Text Length Count', barmode='overlay', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
+fig3=px.histogram(df_news_calculation, x='content_length', title='News Text Length Count', barmode='overlay', color='Label', color_discrete_sequence=["#949CDF", "#EB455F"])
 fig3.update_xaxes(title='Text length').update_yaxes(title='News Count')
 fig3.update_layout(width=700, height=300)
 fig3.show()
 
 #Visualise the number of weords
-fig4=px.histogram(df_news_calculation, x='word_count', title='The number of words', barmode='overlay', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
+fig4=px.histogram(df_news_calculation, x='word_count', title='The number of words', barmode='overlay', color='Label', color_discrete_sequence=["#949CDF", "#EB455F"])
 fig4.update_xaxes(title='The number of words').update_yaxes(title='News Count')
 fig4.update_layout(width=700, height=300)
 fig4.show()
 
 #Visualise average word length 
-fig5=px.histogram(df_news_calculation, x='aver_word_length', title='Average Word Length Count', barmode='overlay', color='Label', color_discrete_sequence=["#676FA3", "#FF5959"])
+fig5=px.histogram(df_news_calculation, x='aver_word_length', title='Average Word Length Count', barmode='overlay', color='Label', color_discrete_sequence=["#949CDF", "#EB455F"])
 fig5.update_xaxes(title='Average Word length').update_yaxes(title='News Count')
 fig5.update_layout(width=700, height=300)
 fig5.show()
 
 df_pos_tag=pd.read_csv("data/pos_tag.csv")
-fig6=px.histogram(df_pos_tag[df_pos_tag["frequency_ratio"]>1.3], x='pos_tag', y='frequency_ratio', title='POS Tagging Frequency in Fake and Real News', barmode='group', color='news_category', color_discrete_sequence=["#676FA3", "#FF5959"])
+fig6=px.histogram(df_pos_tag[df_pos_tag["frequency_ratio"]>1.3], x='pos_tag', y='frequency_ratio', title='POS Tagging Frequency in Fake and Real News', barmode='group', color='news_category', color_discrete_sequence=["#949CDF", "#EB455F"])
 fig6.update_xaxes(title='POS Tagging').update_yaxes(title='Frequency')
 fig6.update_layout(xaxis={'categoryorder':'total descending'}, width=700, height=400)
 fig6.show()
