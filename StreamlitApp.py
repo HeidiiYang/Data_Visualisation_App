@@ -22,10 +22,9 @@ st.set_page_config(
      layout="wide",
 )
 
-def predict(data):
+def load_model(data):
      logreg=joblib.load('logreg_model.sav')
-     proba_result=logreg.predict_proba(data)
-    return proba_result
+    return logreg
 
 def text_processing(text):
      #remove numbers/digits
@@ -51,6 +50,8 @@ def tf_idf(text):
      response=vectorizer.fit_transform([text, ''])
      tfidf_matrix=pd.DataFrame(response.toarray(),columns=vectorizer.get_feature_names_out())
      text_tfidf=tfidf_matrix.loc[0]
+     text_tfidf=text_tfidf.to_frame()
+     text_tfidf=text_tfidf.transpose()
      return text_tfidf
 
 def feature_matching(df_text_feature):
@@ -129,7 +130,6 @@ elif selected=="News Detection Tool":
      if st.button("predict"):
           t=text_processing(user_input)
           t=tf_idf(t)
-          news_category=predict(t)
           #news_category=predict(np.array[[area, bedrooms]])
           st.text(news_category[0])
      
