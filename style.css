@@ -9,9 +9,10 @@ button.st-bq.st-br.st-b6.st-b5.st-ar.st-as.st-bs.st-bt.st-bu.st-bv.st-bw.st-bx.s
     white-space: pre-wrap;
 		background-color: #F0F2F6;
 		border-radius: 4px 4px 0px 0px;
-		gap: 1px;
+		gap: 2px;
 		padding-top: 10px;
 	        padding-left: 10px;
+	        padding-right: 10px;
 		padding-bottom: 10px;
 }
 
