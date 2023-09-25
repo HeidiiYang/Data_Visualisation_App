@@ -127,6 +127,8 @@ elif selected=='Exploratory Data Analysis':
      st.write(fig5)
      st.write(fig6)
 elif selected=='Modelling':
+     with open("style.css") as source_style:
+          st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
      tab1, tab2=st.tabs(["Model Balancing", "Model Evaluation"])
      with tab1:
           st.write(fig2)
