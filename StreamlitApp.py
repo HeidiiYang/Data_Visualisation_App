@@ -22,9 +22,10 @@ st.set_page_config(
      layout="wide",
 )
 
-def load_model(data):
+def predict(data):
      logreg=joblib.load('logreg_model.sav')
-     return logreg
+     proba_result=logreg.predict_proba(data)
+     return proba_result
 
 def text_processing(text):
      #remove numbers/digits
@@ -130,7 +131,8 @@ elif selected=="News Detection Tool":
      if st.button("predict"):
           t=text_processing(user_input)
           t=tf_idf(t)
-          st.write(t)
+          news_category=predict(t)
+          st.write(news_category)
           #news_category=predict(np.array[[area, bedrooms]])
           #st.text(t)
 
