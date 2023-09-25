@@ -73,7 +73,10 @@ with st.sidebar:
                               "nav-link-selected": {"background-color": "#2b3467"},
                          })
     selected
-
+#Customise the side menu
+with open("style.css") as source_style:
+          st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
+     
 #Reading the calculation dataset
 df_news_calculation=pd.read_csv("data/dataset_calculation.csv")
 
