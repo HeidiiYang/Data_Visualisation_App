@@ -24,7 +24,7 @@ st.set_page_config(
 
 def load_model(data):
      logreg=joblib.load('logreg_model.sav')
-    return logreg
+     return logreg
 
 def text_processing(text):
      #remove numbers/digits
