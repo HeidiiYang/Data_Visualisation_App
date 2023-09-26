@@ -123,7 +123,7 @@ fig6.show()
 df_nnp=pd.read_csv("data/nnp_20.csv")
 fig7=px.histogram(df_nnp, x='NNP', y='frequency_ratio', title='Top 20 Proper Nouns', barmode='group', color='news_category', color_discrete_sequence=["#949CDF", "#EB455F"])
 fig7.update_xaxes(title='Part of speech').update_yaxes(title='Frequency')
-fig7.update_layout(xaxis={'categoryorder':'total ascending'}, width=700, height=800)
+fig7.update_layout(xaxis={'categoryorder':'total ascending'}, width=700, height=500)
 fig7.show()
 
 if selected=='Project Description':
