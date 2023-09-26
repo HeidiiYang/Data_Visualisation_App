@@ -146,6 +146,8 @@ elif selected=='Modelling':
      tab1, tab2, tab3=st.tabs(["Data Balancing", "Model Development", "Model Evaluation"])
      with tab1:
           st.write(fig2)
+          st.write("The final dataset is imbalanced with 26003 records of real news and 5404 records of fake news resulting in an approximate ratio of 5:1, which would skew the classification model to favour the real news. To deal with this issue, there are mainly two ways: oversampling the minority class and undersampling the majority class. However, a method combing these two ways has been approved to have a better performance in generating a synthetic balanced dataset—SMOTE.")
+          st.write("After the resampling the original news dataset, there are 36472 records including 18236 real news records and 18236 fake news records. Then, the resampled data was trained by classification models. Some records being split from the original dataset were used for model evaluation.")
 elif selected=="News Detection Tool":
      with open("style.css") as source_style:
           st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
