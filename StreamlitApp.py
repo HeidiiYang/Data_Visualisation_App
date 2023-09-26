@@ -143,7 +143,7 @@ elif selected=='Exploratory Data Analysis':
 elif selected=='Modelling':
      with open("style.css") as source_style:
           st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
-     tab1, tab2, tab3, tab4=st.tabs(["Feature Extraction", "Data Balancing", "Model Development", "Model Evaluation"])
+     tab1, tab2, tab3=st.tabs(["Feature Extraction", "Data Balancing", "Model Development and Evaluation"])
      with tab1:
           st.write("TF-IDF was applied to present the news text. However, the dataset was too large to include all words in the final")
      with tab2:
