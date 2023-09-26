@@ -145,7 +145,7 @@ elif selected=='Modelling':
           st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
      tab1, tab2, tab3=st.tabs(["Feature Extraction", "Data Balancing", "Model Development and Evaluation"])
      with tab1:
-          st.write("TF-IDF was applied to present the news text. However, the dataset was too large to include all words in the final")
+          st.write("TF-IDF was employed to represent news text. However, to prevent the matrix from becoming excessively large, words that appeared in less than 10% of the records were excluded. Consequently, 236 features were extracted.")
      with tab2:
           st.write(fig2)
           st.write("The final dataset is imbalanced with 26003 records of real news and 5404 records of fake news resulting in an approximate ratio of 5:1, which would skew the classification model to favour the real news. To deal with this issue, there are mainly two ways: oversampling the minority class and undersampling the majority class. However, a method combing these two ways has been approved to have a better performance in generating a synthetic balanced dataset—[SMOTE](https://www.jair.org/index.php/jair/article/view/10302).")
