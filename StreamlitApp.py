@@ -139,7 +139,7 @@ elif selected=='Exploratory Data Analysis':
      st.write("In terms of the part-of-speech differences, fake news contains more nouns, verbs, past participle verbs, and adverbs. In contrast, real news uses more adjectives, proper nouns, gerund verbs and past tense verbs.")
      st.write("The difference lying in the use of proper nouns between fake and real news is noticeable. To illustrate the contrast, the top 20 proper nouns in the two news groups were selected and visualised.")
      st.write(fig7)
-     st.write("Apparently, terms associated with health (such as ) occurred more frequently in the fake news dataset than in the real news dataset, which lends support to the assumption of a large volume of fake news related to the covid-19 above. ")
+     st.write("Apparently, terms associated with health (such as Health and CDC (Africa Centres for Disease Control and Prevention)) occurred more frequently in the fake news dataset than in the real news dataset, which lends support to the assumption of a large volume of fake news related to the covid-19 above. ")
 elif selected=='Modelling':
      with open("style.css") as source_style:
           st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
