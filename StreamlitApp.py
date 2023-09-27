@@ -132,9 +132,9 @@ if selected=='Project Description':
      st.write("There is a pressing need to leverage cutting-edge technologies to combat the dissemination of harmful and misleading information. Artificial Intelligence (AI) emerges as a powerful tool for detecting fake news in the digital media landscape. This project aims to apply Natural Language Processing (NLP) to analyse the differences between fake and authentic news in a textual setting enabling the detection of potential fake news.")
      st.write("Additionally, given the detrimental impacts of misinformation on the 2020’s senatorial election and the upcoming national election in October 2023, it is crucial to develop a user-friendly fake news detection tool that will be able to assist in the manually fact-check previously conducted by individuals and promotion of electoral integrity.")
      st.subheader("Methods and Techniques")
-     st.write('<p style="font-size: 20px; color:red;">Here is some red text</p>', 
+     st.write('<p style="font-size: 22px; color:#0C4271;">Data Collection</p>', 
 unsafe_allow_html=True)
-     st.wrtie("Web scrapping--collected news from various news websites including fact-check websites to construct the news dataset.")
+     st.write("Web scrapping--collected news from various news websites including fact-check websites to construct the news dataset.")
 elif selected=='Exploratory Data Analysis':
      st.subheader("Exploratory Data Analysis")
      st.write(fig1)
