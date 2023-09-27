@@ -136,7 +136,13 @@ if selected=='Project Description':
           """
           - **Dataset Collection:**
                - **Web scrapping:** collected news from various news websites including fact-check websites to construct the news dataset. 
-               Data integration and data cleansing: merged the data collected from different sources and maintained data consistency.
+               - **Data integration and data cleansing:** merged the data collected from different sources and maintained data consistency.
+          - **Data Analysis:**
+               - **Exploratory data analysis:** had a comprehensive understanding of the whole dataset and presented initial insights through graphical representations.
+          - **Model Development:**
+               - **Machine learning classification:** extracted features to represent news content and selecting and designing models that can distinguish fake news from authentic news while emphasising robustness, ensuring reliable performance across various conditions and datasets.
+          - **User Interface Development:**
+               - **Streamlit (an open-source app framework):**built a user-friendly interface that allows users to paste news content and predict its authenticity. 
           """      
      )
 elif selected=='Exploratory Data Analysis':
