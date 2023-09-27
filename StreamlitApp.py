@@ -135,6 +135,16 @@ if selected=='Project Description':
      st.write('<p style="font-size: 22px; color:#0C4271;">Data Collection</p>', 
 unsafe_allow_html=True)
      st.write("Web scrapping--collected news from various news websites including fact-check websites to construct the news dataset.")
+     st.write("Data integration and data cleansing—merged the data collected from different sources and maintained data consistency.")
+     st.write('<p style="font-size: 22px; color:#0C4271;">Data Analysis</p>', 
+unsafe_allow_html=True)
+     st.write("Exploratory data analysis—had a comprehensive understanding of the whole dataset and presented initial insights through graphical representations.")
+     st.write('<p style="font-size: 22px; color:#0C4271;">Model Development</p>', 
+unsafe_allow_html=True)
+     st.write("Machine learning classification—extracted features to represent news content and selecting and designing models that can distinguish fake news from authentic news while emphasising robustness, ensuring reliable performance across various conditions and datasets.")
+     st.write('<p style="font-size: 22px; color:#0C4271;">Model Development</p>', 
+unsafe_allow_html=True)
+     st.write("Streamlit, an open-source app framework—built a user-friendly interface that allows users to paste news content and predict its authenticity.")
 elif selected=='Exploratory Data Analysis':
      st.subheader("Exploratory Data Analysis")
      st.write(fig1)
