@@ -140,10 +140,7 @@ if selected=='Project Description':
           - **Data Analysis:**
                - **Exploratory data analysis:** had a comprehensive understanding of the whole dataset and presented initial insights through graphical representations.
           - **Model Development:**
-               - **Machine learning classification:** extracted features to represent news content and selecting and designing models that can distinguish fake news from authentic news while emphasising robustness, ensuring reliable performance across various conditions and datasets.
-          - **User Interface Development:**
-               - **Streamlit:**built a user-friendly interface that allows users to paste news content and predict its authenticity. 
-          """      
+                - **Machine Learning Classification:** extracted features to represent news content and selecting and designing models that can distinguish fake news from authentic news while emphasising robustness, ensuring reliable performance across various conditions and datasets.     
      )
 elif selected=='Exploratory Data Analysis':
      st.subheader("Exploratory Data Analysis")
