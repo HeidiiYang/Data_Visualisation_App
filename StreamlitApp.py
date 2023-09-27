@@ -142,7 +142,7 @@ if selected=='Project Description':
           - **Model Development:**
                - **Machine learning classification:** extracted features to represent news content and selecting and designing models that can distinguish fake news from authentic news while emphasising robustness, ensuring reliable performance across various conditions and datasets.
           - **User Interface Development:**
-               - **Streamlit (an open-source app framework):**built a user-friendly interface that allows users to paste news content and predict its authenticity. 
+               - **Streamlit:**built a user-friendly interface that allows users to paste news content and predict its authenticity. 
           """      
      )
 elif selected=='Exploratory Data Analysis':
