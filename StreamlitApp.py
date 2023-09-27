@@ -127,7 +127,8 @@ fig7.update_layout(xaxis={'categoryorder':'total ascending'}, width=700, height=
 fig7.show()
 
 if selected=='Project Description':
-     st.write("Fake news detection.")
+     st.subheader("Project Background")
+     st.write("Fake news leading to misinformation and disrupting confidence in media industry, poses a potential threat to society as a whole. Looking back to 2019, the detriment to various social realms, including health interventions and electoral integrity, cause by fake news, rumours, and misinformation had captured the nation’s attention in Liberia Consequently, actions and strategies were taken to combat the escalating spread of fake news. For example, a high-level regional conference discussing the tools and methodologies to monitor the online space and tackle misinformation and hate speech was held in Liberia in July 2023 joined by other West Africa countries. (Click [here] (https://chriswizo.substack.com/p/fighting-fake-news-together-liberia) for more information about the conference.)")
 elif selected=='Exploratory Data Analysis':
      st.write(fig1)
      st.write("Fake news accumulates in 2020, suggesting the potential existence of a significant amount of misinformation concerning COVID-19.")
