@@ -135,7 +135,7 @@ if selected=='Project Description':
      st.markdown(
           """
           - **Dataset Collection:**
-               **Web scrapping:** collected news from various news websites including fact-check websites to construct the news dataset. 
+               - **Web scrapping:** collected news from various news websites including fact-check websites to construct the news dataset. 
                Data integration and data cleansing: merged the data collected from different sources and maintained data consistency.
           """      
      )
