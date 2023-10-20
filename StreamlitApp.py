@@ -168,9 +168,10 @@ elif selected=='Modelling':
           st.write("The final dataset is imbalanced with 26003 records of real news and 5404 records of fake news resulting in an approximate ratio of 5:1, which would skew the classification model to favour the real news. To deal with this issue, there are mainly two ways: oversampling the minority class and undersampling the majority class. However, a method combing these two ways has been approved to have a better performance in generating a synthetic balanced dataset—[SMOTE](https://www.jair.org/index.php/jair/article/view/10302).")
           st.write("After the resampling the original news dataset, there are 36472 records including 18236 real news records and 18236 fake news records. Then, the resampled data was trained by classification models. 9423 records being split from the original dataset were used for model evaluation.")
      with tab2:
-          st.write("Logic Regression, Navie Bayes, Random Forest and Gradient Boosting classifiers were employed respectively. A table below shows the accuracy score for each model. ")
+          st.write("Logistic Regression, Navie Bayes, Random Forest and Gradient Boosting classifiers were employed respectively. A table below shows the accuracy score for each model. ")
           df_model_evaluation=pd.read_csv("data/model_evaluation.csv")
           st.table(df_model_evaluation)
+          st.write("Based on model performance, Logistic Regression was selected for fake news prediction.")
 elif selected=="News Detection Tool":
      with open("style.css") as source_style:
           st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
