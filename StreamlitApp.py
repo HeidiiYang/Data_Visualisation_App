@@ -142,6 +142,7 @@ if selected=='Project Description':
           - **Model Development:**
                 - **Machine Learning Classification:** extracted features to represent news content and selecting and designing models that can distinguish fake news from authentic news while emphasising robustness, ensuring reliable performance across various conditions and datasets.
           - ** **
+               - **Machine Learning Classification:**
           """
      )
 elif selected=='Exploratory Data Analysis':
