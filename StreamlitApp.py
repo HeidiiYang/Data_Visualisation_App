@@ -171,7 +171,7 @@ elif selected=='Modelling':
           st.write("Logistic Regression, Navie Bayes, Random Forest and Gradient Boosting classifiers were employed respectively. A table below shows the accuracy score for each model. ")
           df_model_evaluation=pd.read_csv("data/model_evaluation.csv")
           st.table(df_model_evaluation)
-          st.write("Based on model performance, Logistic Regression was selected for fake news prediction.")
+          st.write("Based on model performance, Logistic Regression was finally chosen for predicting fake news in this project.")
 elif selected=="News Detection Tool":
      with open("style.css") as source_style:
           st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
