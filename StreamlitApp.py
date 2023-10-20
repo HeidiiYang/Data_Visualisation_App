@@ -169,6 +169,8 @@ elif selected=='Modelling':
           st.write("After the resampling the original news dataset, there are 36472 records including 18236 real news records and 18236 fake news records. Then, the resampled data was trained by classification models. 9423 records being split from the original dataset were used for model evaluation.")
      with tab2:
           st.write("Logic Regression, Navie Bayes, Random Forest and Gradient Boosting classifiers were employed respectively. A table below shows the accuracy score for each model. ")
+          df_model_evaluation=pd.read_csv("data/model_evaluation.csv")
+          st.table(df_model_evaluation)
 elif selected=="News Detection Tool":
      with open("style.css") as source_style:
           st.markdown(f"<style>{source_style.read()}</style>", unsafe_allow_html=True)
