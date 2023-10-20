@@ -134,14 +134,14 @@ if selected=='Project Description':
      st.subheader("Methods and Techniques")
      st.markdown(
           """
-          - **Dataset Collection:**
+          - **Dataset Collection**
                - **Web scrapping:** collected news from various news websites including fact-check websites to construct the news dataset. 
                - **Data integration and data cleansing:** merged the data collected from different sources and maintained data consistency.
-          - **Data Analysis:**
+          - **Data Analysis**
                - **Exploratory data analysis:** had a comprehensive understanding of the whole dataset and presented initial insights through graphical representations.
-          - **Model Development:**
+          - **Model Development**
                 - **Machine Learning Classification:** extracted features to represent news content and selecting and designing models that can distinguish fake news from authentic news while emphasising robustness, ensuring reliable performance across various conditions and datasets.
-          - **XXX**
+          - **Model Development**
                - **Machine Learning Classification:** extracted features to represent news content and selecting and designing models that can distinguish fake news from authentic news while emphasising robustness, ensuring reliable performance across various conditions and datasets.
           """
      )
