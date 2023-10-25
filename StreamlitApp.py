@@ -18,7 +18,7 @@ nltk.download('wordnet')
 
 # Initial page config
 st.set_page_config(
-     page_title='Africa-News-Detection',
+     page_title='Africa-Fake-News-Detection',
      layout="wide",
 )
 
