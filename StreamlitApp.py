@@ -83,7 +83,7 @@ with open("style.css") as source_style:
 df_news_calculation=pd.read_csv("data/dataset_calculation.csv")
 
 #Visualise the news count by year
-fig1=px.histogram(df_news_calculation, x='year', title='News Count by Year', color='Label', color_discrete_sequence=["#CD5C08", "#6A9C89"])
+fig1=px.histogram(df_news_calculation, x='year', title='News Count by Year', color='Label', color_discrete_sequence=["#5B9A8B", "#F7E987"])
 fig1.update_xaxes(title='Publication Year').update_yaxes(title='News Count')
 fig1.update_layout(width=700, height=400, bargap=0.03)
 fig1.show()
